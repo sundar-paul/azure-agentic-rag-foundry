@@ -1,6 +1,7 @@
 # Azure Agentic RAG Foundry
 
-![Azure Agentic RAG Foundry Hero](assets/hero.png)
+> [!NOTE]
+> **Hero Image**: The generated hero image is located locally at `assets/hero.png`. Please upload it to the `assets/` folder in this repository manually to view it here, as automated binary uploads are currently restricted.
 
 ## Overview
 

@@ -20,9 +20,9 @@ graph TD
     Manager -->|Orchestrates| Critic
     
     subgraph "Agent Swarm"
-    Archivist[Archivist Agent<br/>(Retriever)]
-    Analyst[Analyst Agent<br/>(Synthesizer)]
-    Critic[Critic Agent<br/>(Quality Control)]
+    Archivist["Archivist Agent<br/>(Retriever)"]
+    Analyst["Analyst Agent<br/>(Synthesizer)"]
+    Critic["Critic Agent<br/>(Quality Control)"]
     end
     
     Archivist -->|Tools| AISearch[Azure AI Search]

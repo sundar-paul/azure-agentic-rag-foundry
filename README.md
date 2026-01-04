@@ -1,7 +1,6 @@
 # Azure Agentic RAG Foundry
 
-> [!NOTE]
-> **Hero Image**: The generated hero image is located locally at `assets/hero.png`. Please upload it to the `assets/` folder in this repository manually to view it here, as automated binary uploads are currently restricted.
+![Azure Agentic RAG Foundry Hero](src/hero.png)
 
 ## Overview
 
@@ -15,30 +14,30 @@ The system is built on a modular architecture:
 
 ```mermaid
 graph TD
-    User[User] -->|Query| Manager[Group Chat Manager]
-    Manager -->|Orchestrates| Archivist
-    Manager -->|Orchestrates| Analyst
-    Manager -->|Orchestrates| Critic
+    User[Director] -->|Directive| Manager[Unit Commander]
+    Manager -->|Tasking| Archivist
+    Manager -->|Tasking| Analyst
+    Manager -->|Tasking| Critic
     
-    subgraph "Agent Swarm"
-    Archivist["Archivist Agent<br/>(Retriever)"]
-    Analyst["Analyst Agent<br/>(Synthesizer)"]
-    Critic["Critic Agent<br/>(Quality Control)"]
+    subgraph "Operative Swarm"
+    Archivist["Archivist<br/>(Intel Retrieval)"]
+    Analyst["Analyst<br/>(Strat-Synth)"]
+    Critic["Critic<br/>(Validation)"]
     end
     
-    Archivist -->|Tools| AISearch[Azure AI Search]
-    AISearch -->|Documents| Archivist
+    Archivist -->|Query| AISearch[Azure Vector Mainframe]
+    AISearch -->|Intel| Archivist
     
-    style User fill:#f9f,stroke:#333,stroke-width:2px
-    style Manager fill:#bbf,stroke:#333,stroke-width:2px
-    style AISearch fill:#bfb,stroke:#333,stroke-width:2px
+    style User fill:#000,stroke:#f00,stroke-width:2px,color:#fff
+    style Manager fill:#000,stroke:#0f0,stroke-width:2px,color:#fff
+    style AISearch fill:#000,stroke:#00f,stroke-width:2px,color:#fff
 ```
 
-### Agent Roles
+### Operative Roles
 
-1.  **The Archivist**: Specialized in information retrieval. It has exclusive access to the `search_knowledge_base` tool, allowing it to query the Azure AI Search index for relevant documents.
-2.  **The Analyst**: A strategic thinker who takes raw data snippets from the Archivist and synthesizes them into a coherent narrative.
-3.  **The Critic**: Ensures the final output is accurate, grounded in the retrieved data, and logically sound.
+1.  **The Archivist**: Quantitative retrieval specialist. Authorized to access the **Azure Vector Mainframe** (`search_knowledge_base`) to extract classified documents.
+2.  **The Analyst**: Strategic synthesizer. Processes raw intelligence into actionable briefings.
+3.  **The Critic**: Counter-intelligence. Validates claims and ensures zero hallucinations in the final dossier.
 
 ## Features
 
@@ -88,7 +87,3 @@ python main.py
 
 *   **Agents**: Modify `src/agents/definitions.py` to change system prompts or add new agents.
 *   **Tools**: Add new tools in `src/tools/` and register them in the agent definitions.
-
-## License
-
-MIT
